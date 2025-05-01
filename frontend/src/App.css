@@ -1,0 +1,1439 @@
+/* Base styles and resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --accent-color: #2ecc71;
+  --accent-dark: #27ae60;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --warning-color: #f39c12;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --dark-gray: #333;
+  --sidebar-width: 250px;
+  --font-family: "Arial", sans-serif;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--dark-gray);
+  background-color: var(--light-gray);
+}
+
+/* App container layout with sidebar */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--dark-gray);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  position: relative;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.logo {
+  max-width: 80px;
+  height: auto;
+  border-radius: var(--border-radius);
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.sidebar-header h1 {
+  font-size: 1.8rem;
+  color: white;
+  margin: 0;
+}
+
+.sidebar-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition);
+  border-left: 4px solid transparent;
+}
+
+.menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-left: 4px solid var(--primary-color);
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.menu-text {
+  font-size: 1rem;
+}
+
+.sidebar-footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Main content area */
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.main-content-full {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Page content styles */
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Upload section styles */
+.upload-section {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: var(--transition);
+}
+
+.upload-section:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Teacher and Exam section specific styles */
+.teacher-section {
+  border-top: 4px solid var(--primary-color);
+}
+
+.exam-section {
+  border-top: 4px solid var(--accent-color);
+}
+
+/* File upload styles with drag-drop enhancements */
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 220px;
+  border: 2px dashed var(--medium-gray);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.file-upload-label:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.teacher-upload .file-upload-label:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+.exam-upload .file-upload-label:hover {
+  border-color: var(--accent-color);
+  background-color: rgba(46, 204, 113, 0.05);
+}
+
+/* Drag states */
+.is-drag-active {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-width: 3px;
+}
+
+.is-drag-accept.teacher-upload,
+.teacher-upload .is-drag-accept {
+  border-color: var(--primary-color);
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.is-drag-accept.exam-upload,
+.exam-upload .is-drag-accept {
+  border-color: var(--accent-color);
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+.is-drag-reject {
+  border-color: var(--error-color);
+  background-color: rgba(231, 76, 60, 0.05);
+}
+
+/* File icon and text */
+.file-upload-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.upload-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.file-upload-text {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.file-format-hint {
+  font-size: 0.85rem;
+  color: #777;
+  text-align: center;
+}
+
+.file-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* File info styles */
+.file-info {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.file-metadata {
+  background-color: var(--light-gray);
+  border-radius: var(--border-radius);
+  width: 100%;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.file-name {
+  font-size: 1rem;
+  color: var(--dark-gray);
+  font-weight: bold;
+  grid-column: 1 / -1;
+  text-align: center;
+  word-break: break-all;
+}
+
+.file-size,
+.file-type,
+.file-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Upload progress styles */
+.upload-progress-container {
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.upload-progress-label {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upload-progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: var(--light-gray);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.upload-progress-fill {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.exam-upload .upload-progress-fill {
+  background-color: var(--accent-color);
+}
+
+/* Upload status messages */
+.upload-error,
+.upload-success {
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.upload-error {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: var(--error-color);
+}
+
+.upload-success {
+  background-color: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  color: var(--success-color);
+}
+
+/* File action buttons */
+.file-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.upload-button,
+.retry-button,
+.cancel-button,
+.clear-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+}
+
+.upload-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.teacher-upload .upload-button {
+  background-color: var(--primary-color);
+}
+
+.exam-upload .upload-button {
+  background-color: var(--accent-color);
+}
+
+.upload-button:hover {
+  transform: translateY(-2px);
+}
+
+.teacher-upload .upload-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.exam-upload .upload-button:hover {
+  background-color: var(--accent-dark);
+}
+
+.cancel-button {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+.retry-button {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.retry-button:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px);
+}
+
+.clear-button {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+}
+
+.clear-button:hover {
+  background-color: var(--medium-gray);
+}
+
+/* Has file styles */
+.has-file {
+  border-style: solid;
+}
+
+.teacher-upload .has-file {
+  border-color: var(--primary-color);
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.exam-upload .has-file {
+  border-color: var(--accent-color);
+  background-color: rgba(46, 204, 113, 0.1);
+}
+
+/* Button disabled state */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .upload-section {
+    padding: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .file-metadata {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebar-header {
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    max-width: 80px;
+    margin-right: 1rem;
+    margin-bottom: 0;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    padding: 1rem;
+    border-left: none;
+    border-bottom: 4px solid transparent;
+  }
+
+  .menu-item.active {
+    border-left: none;
+    border-bottom: 4px solid var(--primary-color);
+  }
+
+  .menu-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .main-content-full {
+    padding: 1.5rem;
+  }
+
+  .file-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .upload-button,
+  .retry-button,
+  .cancel-button,
+  .clear-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .file-upload-label {
+    height: 180px;
+    padding: 1rem;
+  }
+
+  .file-upload-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .file-upload-text {
+    font-size: 1rem;
+  }
+
+  .big-icon {
+    font-size: 2.5rem;
+  }
+
+  .menu-icon {
+    font-size: 1.2rem;
+  }
+
+  .menu-text {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    max-width: 60px;
+  }
+}
+
+/* Timetable Viewer Styles */
+.timetable-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.timetable-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.timetable-header h2 {
+  font-size: 2rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+}
+
+.timetable-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.filter-section label {
+  font-weight: bold;
+  min-width: 130px;
+}
+
+.teacher-select {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  max-width: 300px;
+  background-color: white;
+  transition: var(--transition);
+}
+
+.teacher-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Loading state */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+}
+
+/* Error message */
+.error-message {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: var(--error-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Empty state */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: white;
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 500px;
+}
+
+/* Timetable cards */
+.timetables-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timetable-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  border-top: 4px solid var(--primary-color);
+}
+
+.timetable-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.timetable-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--medium-gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timetable-card-header h3 {
+  font-size: 1.3rem;
+  color: var(--dark-gray);
+  margin: 0;
+}
+
+.assignment-count {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.timetable-content {
+  padding: 0;
+  overflow-x: auto;
+}
+
+/* Assignments table */
+.assignments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.assignments-table th,
+.assignments-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.assignments-table th {
+  background-color: var(--light-gray);
+  font-weight: bold;
+  color: var(--dark-gray);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.assignments-table tbody tr:hover {
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+.assignments-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Timetable actions */
+.timetable-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--medium-gray);
+  background-color: var(--light-gray);
+}
+
+.action-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.print-button {
+  background-color: var(--dark-gray);
+  color: white;
+}
+
+.print-button:hover {
+  background-color: #222;
+  transform: translateY(-2px);
+}
+
+.export-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.export-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Print styles */
+@media print {
+  .sidebar,
+  .filter-section,
+  .timetable-actions {
+    display: none !important;
+  }
+
+  .app-container,
+  .main-area,
+  .main-content-full,
+  .page-content,
+  .timetable-container,
+  .timetables-list,
+  .timetable-card {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background-color: white !important;
+  }
+
+  .timetable-card {
+    page-break-inside: avoid;
+    margin-bottom: 2rem !important;
+  }
+
+  .timetable-card-header {
+    border-bottom: 2px solid #333 !important;
+  }
+
+  .assignments-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  .assignments-table th,
+  .assignments-table td {
+    border: 1px solid #333 !important;
+  }
+}
+
+/* Responsive adjustments for timetable */
+@media (max-width: 768px) {
+  .filter-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .teacher-select {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .timetable-card-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .timetable-actions {
+    flex-direction: column;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+}
+
+/* Teacher and Exam List Viewer Styles */
+.list-viewer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.list-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.list-header h2 {
+  font-size: 2rem;
+  color: var(--dark-gray);
+  margin-bottom: 0.5rem;
+}
+
+.list-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Search and filter controls */
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-filter label {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.date-input {
+  padding: 0.75rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.clear-filter-button {
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.clear-filter-button:hover {
+  background-color: var(--medium-gray);
+}
+
+/* Data tables */
+.list-table-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.data-table th {
+  background-color: var(--light-gray);
+  font-weight: bold;
+  color: var(--dark-gray);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.data-table tbody tr:hover {
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.teacher-name,
+.exam-name {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.list-info {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #666;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: -1rem;
+}
+
+/* Success Banner */
+.upload-success-banner {
+  display: flex;
+  align-items: center;
+  background-color: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  border-left: 4px solid var(--success-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+.success-icon {
+  font-size: 2rem;
+  color: var(--success-color);
+  margin-right: 1.5rem;
+}
+
+.success-message {
+  flex: 1;
+}
+
+.success-message h3 {
+  font-size: 1.3rem;
+  color: var(--dark-gray);
+  margin: 0 0 0.5rem 0;
+}
+
+.success-message p {
+  margin: 0;
+  color: #555;
+}
+
+.upload-new-button {
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.upload-new-button:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* Responsive styles for list viewers */
+@media (max-width: 900px) {
+  .filter-controls {
+    flex-direction: column;
+  }
+
+  .date-filter {
+    width: 100%;
+  }
+
+  .date-input {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .upload-success-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .success-icon {
+    margin-right: 0;
+  }
+
+  .upload-new-button {
+    width: 100%;
+  }
+
+  .data-table {
+    font-size: 0.9rem;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .data-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Upload Status Section */
+.upload-status-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.upload-status-card {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.upload-status-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.status-indicator {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+
+.status-complete {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: var(--success-color);
+  border: 2px solid var(--success-color);
+}
+
+.status-pending {
+  background-color: rgba(243, 156, 18, 0.1);
+  color: var(--warning-color);
+  border: 2px solid var(--warning-color);
+}
+
+.status-text {
+  flex: 1;
+}
+
+.status-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-gray);
+}
+
+.status-text p {
+  color: #666;
+  margin: 0;
+}
+
+/* Generate Section */
+.generate-section {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  transition: var(--transition);
+  margin-bottom: 2rem;
+}
+
+.generate-section:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.generate-info {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.generate-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 250px;
+}
+
+.generate-button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.generate-button:disabled {
+  background-color: var(--medium-gray);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Responsive styles for upload status section */
+@media (max-width: 768px) {
+  .upload-status-section {
+    flex-direction: column;
+  }
+
+  .upload-status-card {
+    width: 100%;
+  }
+
+  .generate-button {
+    width: 100%;
+  }
+}
+
+/* Schedule Results Section */
+.schedule-result-section {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-top: 2rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.result-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.result-header h3 {
+  color: #2e7d32;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.result-header p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.schedule-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.schedule-actions button {
+  min-width: 180px;
+  padding: 10px 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.view-button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+}
+
+.view-button:hover {
+  background-color: #303f9f;
+}
+
+.export-button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+}
+
+.export-button:hover {
+  background-color: #f57c00;
+}
+
+.regenerate-button {
+  background-color: white;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+}
+
+.regenerate-button:hover {
+  background-color: #ffebee;
+}
+
+.schedule-preview {
+  background-color: #f5f7fa;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.preview-header {
+  margin-bottom: 1rem;
+}
+
+.preview-header h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.preview-header p {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.placeholder-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+  background-color: #eaecef;
+  border-radius: 4px;
+  border: 1px dashed #ccc;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .schedule-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .schedule-actions button {
+    width: 100%;
+  }
+
+  .schedule-result-section {
+    padding: 1.5rem;
+  }
+}
+
+/* Loading Animation Styles */
+.loading-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.loading-animation p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
