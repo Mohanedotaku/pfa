@@ -50,3 +50,56 @@ C:\Users\fathi\source\repos\exams supervisor\exams supervisor\bin\Debug\net8.0\E
 C:\Users\fathi\source\repos\exams supervisor\exams supervisor\bin\Debug\net8.0\RBush.dll
 C:\Users\fathi\source\repos\exams supervisor\exams supervisor\bin\Debug\net8.0\SixLabors.Fonts.dll
 C:\Users\fathi\source\repos\exams supervisor\exams supervisor\bin\Debug\net8.0\System.IO.Packaging.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\appsettings.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\exams supervisor.staticwebassets.endpoints.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\exams supervisor.exe
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\exams supervisor.deps.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\exams supervisor.runtimeconfig.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\exams supervisor.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\exams supervisor.pdb
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\ClosedXML.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\ClosedXML.Parser.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\EPPlus.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\EPPlus.Interfaces.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\ExcelNumberFormat.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\RBush.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\SixLabors.Fonts.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\System.IO.Packaging.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.csproj.AssemblyReference.cache
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.AssemblyInfoInputs.cache
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.AssemblyInfo.cs
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.csproj.CoreCompileInputs.cache
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.sourcelink.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\scopedcss\bundle\exams supervisor.styles.css
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets\msbuild.exams supervisor.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets\msbuild.exams supervisor.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets\msbuild.build.exams supervisor.props
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.exams supervisor.props
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.exams supervisor.props
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams su.FEC5B14A.Up2Date
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\refint\exams supervisor.dll
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.pdb
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\exams supervisor.genruntimeconfig.cache
+C:\Users\fathi\source\repos\Exams Supervisor application\exams supervisor\exams supervisor\obj\Debug\net8.0\ref\exams supervisor.dll

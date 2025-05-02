@@ -95,6 +95,8 @@ app.MapPost("/upload-excelSessions", (IFormFile file, SessionDataProcessor Sproc
 	{
 		using var stream = file.OpenReadStream();
 		Sprocessor.LoadExcelData(stream,Tprocessor.GetSommeBValues());
+		if (Sprocessor.GetAllSessions().Count() == 0)
+			return Results.Problem($"Error processing Excel file");
 		return Results.Ok("Excel file processed successfully.");
 	}
 	catch (Exception ex)
