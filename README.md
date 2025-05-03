@@ -1,60 +1,80 @@
-# ExamSchedule
+# 📘 Surveillance and Examination Management Application
 
-A web application for organizing and managing examination surveillance schedules. This application allows educational institutions to upload teacher lists and exam schedules, then automatically generates surveillance timetables.
+**🗓 Date:** February 24, 2025  
 
-## Features
+## 📌 Introduction  
+This project aims to develop an application for managing surveillance duties and exam scheduling in a school. The application will:  
+✅ Automatically calculate teachers' surveillance workload based on their teaching hours.  
+✅ Schedule exams for each class.  
+✅ Allow teachers to input their availability for surveillance.  
 
-- Upload teacher lists in Excel format
-- Upload exam schedules in Excel format
-- Automatic generation of surveillance schedules
-- View and export timetables
-- Print-friendly interface for surveillance assignments
+---
 
-## Technologies Used
+## 🎯 Context and Objectives  
 
-- React.js for the frontend
-- .NET Core for the backend API
-- Excel file processing
-- Responsive design for all devices
+### 📍 Context  
+The school seeks to automate surveillance and exam management to simplify planning and reduce administrative workload.  
 
-## Getting Started
+### 🎯 Objectives  
+The application should enable:  
+- 📊 **Automated calculation** of teachers' surveillance workload.  
+- 🗓 **Management of the exam calendar** for each class.  
+- 📝 **Teachers to input their availability** for surveillance duties.  
 
-### Prerequisites
+---
 
-- Node.js and npm
-- .NET Core SDK
+## ⚙️ Functional Specifications  
 
-### Installation
+### 👩‍🏫 Teacher Management  
+- Each teacher has a weekly teaching workload.  
+- The surveillance workload is equal to the teaching workload (e.g., **9 teaching hours = 9 surveillance hours**).  
 
-1. Clone the repository
+### 🏫 Exam Management  
+- The application must allow **creating an exam schedule** for each class.  
+- Necessary information (**subject, class, teachers**) can be imported via an **Excel file** or entered manually.  
 
-   ```
-   git clone https://github.com/hou7happy/ExamSchedule.git
-   cd ExamSchedule
-   ```
+### 🔍 Surveillance Management  
+- Teachers can **input their availability** (days and time slots).  
+- The application must **consider these availabilities** when assigning surveillance duties.  
 
-2. Install NPM packages
+---
 
-   ```
-   npm install
-   ```
+## 🛠 Technical Specifications  
 
-3. Start the development server
-   ```
-   npm start
-   ```
+### 💻 Development Environment  
+- **Programming language:** Python 🐍  
+- **Graphical interface:** Flutter or JavaScript for full-stack hybrid (Electron)  
+- **Database:** SQLite or MySQL  
 
-## Usage
+### 📥 Data Import  
+- The application must support **importing data from an Excel file** (`.xlsx` format).  
+- Required columns: **Subject | Class | Teacher**  
 
-1. Upload your teacher list in Excel format
-2. Upload your exam schedule in Excel format
-3. Generate the surveillance timetable
-4. View, export, or print the generated schedules
+### 📤 Data Export  
+- The application must allow exporting **exam schedules and surveillance planning** in **PDF or Excel format**.  
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 🚧 Constraints  
+- The application must be **easy to use** for teachers and administrative staff.  
+- **Data security** must be ensured and accessible **only to authorized personnel**.  
 
-## License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## ⏳ Provisional Schedule  
+
+| Phase | Duration |
+|--------|----------|
+| **Design Phase** | 2 weeks |
+| **Development Phase** | 2 weeks |
+| **Testing Phase** | 1-2 weeks |
+| **Deployment Phase** | 0.5-1 week |
+
+---
+
+## ✅ Conclusion  
+This document defines the **main features and constraints** of the **Surveillance and Examination Management Application**. It serves as the foundation for the project's development.  
+
+---
+
+💡 **Feel free to contribute or suggest improvements!** 🚀  
