@@ -72,7 +72,7 @@ namespace exams_supervisor.BusinessLogic
 							Date = currentDate.Value,
 							MaxSupervisor = 90,
 							Delay = delay,
-							ResponsiblesName = teachers.Distinct().ToList()
+							ResponsibleName = teachers.Distinct().ToList()
 						});
 					}
 				}
@@ -86,7 +86,7 @@ namespace exams_supervisor.BusinessLogic
 						Type = g.Key.Type,
 						MaxSupervisor = 90,
 						Delay = g.First().Delay,
-						ResponsiblesName = g.SelectMany(s => s.ResponsiblesName).Distinct().ToList()
+						ResponsibleName = g.SelectMany(s => s.ResponsibleName).Distinct().ToList()
 					}).OrderBy(s => s.Date)
 						.ThenBy(s => s.NumSession)  // Add secondary ordering if needed
 						.ToList();

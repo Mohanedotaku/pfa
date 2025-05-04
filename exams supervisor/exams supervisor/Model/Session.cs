@@ -26,6 +26,6 @@ namespace exams_supervisor.Model
 		public DateTime Date { get; set; }
 		public int MaxSupervisor { get; set; } // Maximum number of supervisors
 		public double Delay { get; set; }      // Duration in hours (e.g., 1.0 for DS, 1.5 for Exam)
-		public List<string> ResponsiblesName { get; set; } = new List<string>(); // List of responsible teachers
+		public List<string> ResponsibleName { get; set; } = new List<string>(); // List of responsible teachers
 	}
 }

@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using exams_supervisor.BusinessLogic;
 using exams_supervisor.Model;
 using Microsoft.AspNetCore.Http;
@@ -18,7 +19,7 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Features.FormOptions>(optio
 });
 builder.Services.AddHttpClient("PythonService", client =>
 {
-	client.BaseAddress = new Uri("http://your-python-api-url.com"); // Replace with actual URL
+	client.BaseAddress = new Uri("http://2243td09-8000.euw.devtunnels.ms"); // Replace with actual URL
 	client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 
@@ -147,35 +148,42 @@ app.MapGet("/schedule", async (
 	var teachers = Tprocessor.GetAllTeachers();
 	var sessions = Sprocessor.GetAllSessions();
 
-	var payload = new { teachers, sessions };
+	var payload = new { sessions, teachers };
 	
-	Console.WriteLine($"Payload: {JsonSerializer.Serialize(payload)}");
+	//Console.WriteLine($"Payload: {JsonSerializer.Serialize(payload)}");
 	var client = httpClientFactory.CreateClient("PythonService");
-	client.Timeout = TimeSpan.FromSeconds(30); // Set based on GA duration
+	client.Timeout = TimeSpan.FromSeconds(2000); // Set based on GA duration
 
 	try
 	{
-		//var response = await client.PostAsJsonAsync("/api/schedule", payload);
-
-		//if (!response.IsSuccessStatusCode)
-		//{
-		//	var body = await response.Content.ReadAsStringAsync();
-		//	return Results.Problem($"Python service error: {response.StatusCode} - {body}");
-		//}
-
-		//var result = await response.Content.ReadFromJsonAsync<List<TeachersScheduling>>();
-
-		//if (result == null)
-		//	return Results.Problem("Received empty or malformed data");
-
-		string jsonFilePath = "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\frontend\\src\\test\\response_teachers.json"; // Update with actual path
-		string jsonString = await System.IO.File.ReadAllTextAsync(jsonFilePath);
-		List <TeachersScheduling> sch = JsonSerializer.Deserialize<List<TeachersScheduling>>(jsonString, new JsonSerializerOptions
+		// Configure JsonSerializerOptions to serialize enums as strings
+		var jsonOptions = new JsonSerializerOptions
 		{
-			PropertyNameCaseInsensitive = true // Optional: handle case-insensitive property names
-		});
+			Converters = { new JsonStringEnumConverter() },
+			PropertyNamingPolicy = JsonNamingPolicy.CamelCase // Optional: Ensure camelCase for Python compatibility
+		};
+		Console.WriteLine($"Payload: {JsonSerializer.Serialize(payload, jsonOptions)}");
+		var response = await client.PostAsJsonAsync("/schedule", payload, jsonOptions);
 
-		return Results.Ok(sch);
+		if (!response.IsSuccessStatusCode)
+		{
+			var body = await response.Content.ReadAsStringAsync();
+			return Results.Problem($"Python service error: {response.StatusCode} - {body}");
+		}
+
+		var result = await response.Content.ReadFromJsonAsync<List<TeachersScheduling>>();
+		Console.WriteLine($"Result: {JsonSerializer.Serialize(result)}");
+		if (result == null)
+			return Results.Problem("Received empty or malformed data");
+
+		//string jsonFilePath = "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\frontend\\src\\test\\response_teachers.json"; // Update with actual path
+		//string jsonString = await System.IO.File.ReadAllTextAsync(jsonFilePath);
+		//List <TeachersScheduling> sch = JsonSerializer.Deserialize<List<TeachersScheduling>>(jsonString, new JsonSerializerOptions
+		//{
+		//	PropertyNameCaseInsensitive = true // Optional: handle case-insensitive property names
+		//});
+
+		return Results.Ok(result);
 	}
 	catch (TaskCanceledException ex)
 	{
