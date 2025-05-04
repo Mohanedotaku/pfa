@@ -125,6 +125,38 @@ function App() {
     </div>
   );
 
+  // const ExamPage = () => (
+  //   <div className="page-content">
+  //     {!examsUploaded ? (
+  //       <FileUploader
+  //         title="Exam Schedule"
+  //         description="Upload your exam schedule in Excel format to organize examination dates"
+  //         fileType="exam"
+  //         acceptedFileTypes=".xlsx, .xls"
+  //         acceptedExtensions={["xlsx", "xls"]}
+  //         icon="📝"
+  //         uploadEndpoint="http://localhost:5271/upload-excelExams"
+  //         onUploadSuccess={handleExamUploadSuccess}
+  //         onUploadError={handleUploadError}
+  //       />
+  //     ) : (
+  //       <div className="upload-success-banner">
+  //         <div className="success-icon">✅</div>
+  //         <div className="success-message">
+  //           <h3>Exam Schedule Uploaded Successfully!</h3>
+  //           <p>Your exam schedule file has been processed.</p>
+  //         </div>
+  //         <button
+  //           className="upload-new-button"
+  //           onClick={() => setExamsUploaded(false)}
+  //         >
+  //           Upload New File
+  //         </button>
+  //       </div>
+  //     )}
+  //   </div>
+  // );
+
   const ExamPage = () => (
     <div className="page-content">
       {!examsUploaded ? (
@@ -135,7 +167,7 @@ function App() {
           acceptedFileTypes=".xlsx, .xls"
           acceptedExtensions={["xlsx", "xls"]}
           icon="📝"
-          uploadEndpoint="http://localhost:5271/upload-excelExams"
+          uploadEndpoint="http://localhost:5271/upload-excelSessions" // Fixed endpoint
           onUploadSuccess={handleExamUploadSuccess}
           onUploadError={handleUploadError}
         />

@@ -1,65 +1,32 @@
 import { useState, useEffect } from "react";
-// Import test data for development purposes
-import testTeachersData from "../test/response_teachers.json";
+import axios from "axios"; // Ensure axios is imported
 
-/**
- * Component to display teacher list data based on backend model:
- * TeacherInfo {
- *   fullName: string,
- *   grade: string,
- *   hourlyLoad: number
- * }
- */
 const TeacherListViewer = () => {
   const [teachers, setTeachers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error] = useState(null); // Keep error state for UI conditions but don't need setter
+  const [error, setError] = useState(null); // Updated to use setter for error handling
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Fetch teachers from backend or use test data
+  // Fetch teachers from the backend
   useEffect(() => {
     const fetchTeachers = async () => {
       setLoading(true);
+      setError(null); // Reset error state
       try {
-        // TEMPORARILY USING TEST DATA ONLY
-        // Comment out the actual API call for now
-        /*
-        const response = await axios.get("http://localhost:5271/all-teachers");
-        
-        if (response.data) {
-          // If the backend returns an array directly
-          if (Array.isArray(response.data)) {
-            setTeachers(response.data);
-          } 
-          // If the backend returns an object with a teachers property
-          else if (response.data.teachers) {
-            setTeachers(response.data.teachers);
-          } 
-          // For testing with the local JSON file
-          else {
-            setTeachers(testTeachersData);
-          }
-        } else {
-          setTeachers([]);
-        }
-        */
-
-        // Always use test data for now
-        console.log("Using test data from response_teachers.json");
-        setTeachers(testTeachersData);
+        const response = await axios.get("http://localhost:5271/teachers");
+        // Ensure the response data is an array
+        const teachersData = Array.isArray(response.data) ? response.data : [];
+        setTeachers(teachersData);
       } catch (error) {
-        console.error("Error:", error);
-
-        // Always fallback to test data
-        console.log("Using test data from response_teachers.json");
-        setTeachers(testTeachersData);
+        console.error("Error fetching teachers:", error);
+        setError("Failed to load teachers. Please try again later.");
       } finally {
         setLoading(false);
       }
     };
 
     fetchTeachers();
-  }, []);
+  }, []); // Empty dependency array means this runs once on component mount
 
   // Filter teachers based on search query
   const filteredTeachers = teachers.filter(
@@ -86,7 +53,7 @@ const TeacherListViewer = () => {
         />
       </div>
 
-      {/* Loading, error and empty states */}
+      {/* Loading, error, and empty states */}
       {loading && <div className="loading-state">Loading teachers...</div>}
 
       {error && <div className="error-message">{error}</div>}
@@ -102,31 +69,18 @@ const TeacherListViewer = () => {
         </div>
       )}
 
-      {!loading &&
-        !error &&
-        teachers.length > 0 &&
-        filteredTeachers.length === 0 && (
-          <div className="empty-state">
-            <div className="empty-icon">🔍</div>
-            <h3>No Results Found</h3>
-            <p>
-              No teachers match your search query. Try using different keywords.
-            </p>
-          </div>
-        )}
-
-      {/* Data source indicator */}
-      {!loading && teachers.length > 0 && (
-        <div
-          className="list-info"
-          style={{ marginBottom: "1rem", textAlign: "left", color: "#666" }}
-        >
-          <strong>Note:</strong> Displaying sample teacher data from test file
+      {!loading && !error && teachers.length > 0 && filteredTeachers.length === 0 && (
+        <div className="empty-state">
+          <div className="empty-icon">🔍</div>
+          <h3>No Results Found</h3>
+          <p>
+            No teachers match your search query. Try using different keywords.
+          </p>
         </div>
       )}
 
       {/* Teacher list */}
-      {!loading && filteredTeachers.length > 0 && (
+      {!loading && !error && filteredTeachers.length > 0 && (
         <div className="list-table-container">
           <table className="data-table">
             <thead>
