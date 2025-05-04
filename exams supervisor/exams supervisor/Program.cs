@@ -21,8 +21,19 @@ builder.Services.AddHttpClient("PythonService", client =>
 	client.BaseAddress = new Uri("http://your-python-api-url.com"); // Replace with actual URL
 	client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
-var app = builder.Build();
 
+// Configure CORS
+builder.Services.AddCors(options =>
+{
+	options.AddPolicy("AllowReactApp", policy =>
+	{
+		policy.WithOrigins("http://localhost:5173") // Allow requests from React front-end
+			  .AllowAnyMethod()                     // Allow GET, POST, etc.
+			  .AllowAnyHeader();                    // Allow any headers
+	});
+});
+var app = builder.Build();
+app.UseCors("AllowReactApp");
 //app.UsePathBase("/swagger/index.html");
 ExcelPackage.License.SetNonCommercialPersonal("Mohaned");
 
