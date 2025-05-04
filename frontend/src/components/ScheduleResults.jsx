@@ -14,7 +14,7 @@ const ScheduleResults = ({
 
       <div className="schedule-actions">
         <button className="view-button" onClick={onViewAssignments}>
-          View Assignments
+          View Timetable 
         </button>
         <button className="export-button" onClick={onExportSchedule}>
           Export Schedule
@@ -31,7 +31,7 @@ const ScheduleResults = ({
         </div>
         <div className="placeholder-message">
           Detailed schedule information will be displayed here based on the
-          backend data. This will include exam dates, assigned rooms, and
+          backend data. This will include exam dates, and
           teacher allocations.
         </div>
       </div>

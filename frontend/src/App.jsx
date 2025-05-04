@@ -3,19 +3,21 @@ import "./App.css";
 import issatLogo from "./assets/issat.png";
 import FileUploader from "./components/FileUploader";
 import TeacherListViewer from "./components/TeacherListViewer";
+import TimetablePreview from "./components/TimetablePreview";
 import ScheduleResults from "./components/ScheduleResults";
 import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import axios from "axios"; // Added axios import
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("teachers"); // "teachers", "exam", or "timetable"
+  const [currentPage, setCurrentPage] = useState("teachers");
   const [teachersUploaded, setTeachersUploaded] = useState(false);
   const [examsUploaded, setExamsUploaded] = useState(false);
   const [scheduleGenerated, setScheduleGenerated] = useState(false);
   const [generatingSchedule, setGeneratingSchedule] = useState(false);
   const [showAssignments, setShowAssignments] = useState(false);
+  const [sessionsDayDate, setSessionsDayDate] = useState(null); // New state for sessionsDayDate
 
-  // Adding a loading animation component
   const LoadingAnimation = () => (
     <div className="loading-animation">
       <DotLottieReact
@@ -30,40 +32,34 @@ function App() {
 
   const handleTeacherUploadSuccess = (data) => {
     console.log("Teacher file uploaded successfully:", data);
-    // Set teachersUploaded to true regardless of response format for testing
     setTeachersUploaded(true);
-
-    // Note: For testing, we're accepting any response format
-    // In production, the backend would return:
-    // {
-    //   message: "Excel file processed successfully."
-    // }
   };
 
-  const handleExamUploadSuccess = (data) => {
+  const handleExamUploadSuccess = async (data) => {
     console.log("Exam file uploaded successfully:", data);
     setExamsUploaded(true);
-    // Additional handling - e.g., show notification, etc.
+
+    // Call GET /sessionsDayDate
+    try {
+      const response = await axios.get("http://localhost:5271/sessionsDayDate");
+      setSessionsDayDate(response.data);
+    } catch (error) {
+      console.error("Error fetching sessionsDayDate:", error);
+      // Optionally handle error (e.g., show notification)
+    }
   };
 
   const handleUploadError = (error) => {
     console.error("Upload error:", error);
-    // Handle upload error - e.g., show notification, etc.
   };
 
   const handleGenerateSchedule = () => {
     console.log("Generating schedule...");
-
-    // Show generating state
     setGeneratingSchedule(true);
-
-    // Simulate API call with a delay
     setTimeout(() => {
-      // In a real implementation, this would make an API call to the backend
-      // For now, just setting the state to show the generated schedule
       setGeneratingSchedule(false);
       setScheduleGenerated(true);
-      setShowAssignments(false); // Reset assignments view
+      setShowAssignments(false);
     }, 2000);
   };
 
@@ -74,7 +70,6 @@ function App() {
 
   const handleExportSchedule = () => {
     console.log("Exporting schedule...");
-    // Implement export functionality (e.g., generate PDF or Excel file)
     alert("Schedule export functionality would be implemented here");
   };
 
@@ -125,38 +120,6 @@ function App() {
     </div>
   );
 
-  // const ExamPage = () => (
-  //   <div className="page-content">
-  //     {!examsUploaded ? (
-  //       <FileUploader
-  //         title="Exam Schedule"
-  //         description="Upload your exam schedule in Excel format to organize examination dates"
-  //         fileType="exam"
-  //         acceptedFileTypes=".xlsx, .xls"
-  //         acceptedExtensions={["xlsx", "xls"]}
-  //         icon="📝"
-  //         uploadEndpoint="http://localhost:5271/upload-excelExams"
-  //         onUploadSuccess={handleExamUploadSuccess}
-  //         onUploadError={handleUploadError}
-  //       />
-  //     ) : (
-  //       <div className="upload-success-banner">
-  //         <div className="success-icon">✅</div>
-  //         <div className="success-message">
-  //           <h3>Exam Schedule Uploaded Successfully!</h3>
-  //           <p>Your exam schedule file has been processed.</p>
-  //         </div>
-  //         <button
-  //           className="upload-new-button"
-  //           onClick={() => setExamsUploaded(false)}
-  //         >
-  //           Upload New File
-  //         </button>
-  //       </div>
-  //     )}
-  //   </div>
-  // );
-
   const ExamPage = () => (
     <div className="page-content">
       {!examsUploaded ? (
@@ -167,7 +130,7 @@ function App() {
           acceptedFileTypes=".xlsx, .xls"
           acceptedExtensions={["xlsx", "xls"]}
           icon="📝"
-          uploadEndpoint="http://localhost:5271/upload-excelSessions" // Fixed endpoint
+          uploadEndpoint="http://localhost:5271/upload-excelSessions"
           onUploadSuccess={handleExamUploadSuccess}
           onUploadError={handleUploadError}
         />
@@ -233,6 +196,10 @@ function App() {
           </div>
         </div>
 
+        {sessionsDayDate && (
+          <TimetablePreview sessionsDayDate={sessionsDayDate} />
+        )}
+
         {!scheduleGenerated ? (
           <div className="generate-section">
             <p className="generate-info">
@@ -266,11 +233,11 @@ function App() {
               <div className="timetables-list">
                 <div className="timetable-card">
                   <div className="timetable-card-header">
-                    <h3>Surveillance Assignments</h3>
-                    <span className="assignment-count">24 Assignments</span>
+                    <h3>Surveillance Timetables </h3>
+                    <span className="assignment-count">0 Assignments</span>
                   </div>
 
-                  <div className="timetable-content">
+                  {/* <div className="timetable-content">
                     <table className="assignments-table">
                       <thead>
                         <tr>
@@ -282,7 +249,6 @@ function App() {
                         </tr>
                       </thead>
                       <tbody>
-                        {/* Sample data - would be populated from API */}
                         <tr>
                           <td>Ahmed Ben Salem</td>
                           <td>Advanced Databases</td>
@@ -306,7 +272,7 @@ function App() {
                         </tr>
                       </tbody>
                     </table>
-                  </div>
+                  </div> */}
 
                   <div className="timetable-actions">
                     <button
@@ -347,7 +313,6 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Sidebar Menu */}
       <div className="sidebar">
         <div className="sidebar-header">
           <div className="logo-container">
@@ -383,11 +348,10 @@ function App() {
           </button>
         </nav>
         <div className="sidebar-footer">
-          <p>ExamSchedule </p>
+          <p>ExamSchedule</p>
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="main-area">
         <main className="main-content-full">
           {currentPage === "teachers" ? (
