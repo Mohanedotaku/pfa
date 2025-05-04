@@ -5,6 +5,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\model\\teacherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\model\\teacherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\model\\teachersscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\model\\teachersscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\businesslogic\\test.cs||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\businesslogic\\test.cs||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\model\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\model\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,13 +46,78 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\appsettings.json",
+              "RelativeDocumentMoniker": "exams supervisor\\appsettings.json",
+              "ToolTip": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\appsettings.json",
+              "RelativeToolTip": "exams supervisor\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-04T07:44:48.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Test.cs",
+              "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\BusinessLogic\\Test.cs",
+              "RelativeDocumentMoniker": "exams supervisor\\BusinessLogic\\Test.cs",
+              "ToolTip": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\BusinessLogic\\Test.cs",
+              "RelativeToolTip": "exams supervisor\\BusinessLogic\\Test.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAgwIoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T07:31:18.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TeachersScheduling.cs",
+              "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\TeachersScheduling.cs",
+              "RelativeDocumentMoniker": "exams supervisor\\Model\\TeachersScheduling.cs",
+              "ToolTip": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\TeachersScheduling.cs",
+              "RelativeToolTip": "exams supervisor\\Model\\TeachersScheduling.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T05:54:39.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TeacherInfo.cs",
+              "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\TeacherInfo.cs",
+              "RelativeDocumentMoniker": "exams supervisor\\Model\\TeacherInfo.cs",
+              "ToolTip": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\TeacherInfo.cs",
+              "RelativeToolTip": "exams supervisor\\Model\\TeacherInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T05:54:38.299Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Session.cs",
+              "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\Session.cs",
+              "RelativeDocumentMoniker": "exams supervisor\\Model\\Session.cs",
+              "ToolTip": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\Session.cs",
+              "RelativeToolTip": "exams supervisor\\Model\\Session.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T05:54:32.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Program.cs",
               "RelativeDocumentMoniker": "exams supervisor\\Program.cs",
               "ToolTip": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Program.cs",
               "RelativeToolTip": "exams supervisor\\Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADgAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAgwKoAAACDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T00:18:55.267Z",
               "EditorCaption": ""

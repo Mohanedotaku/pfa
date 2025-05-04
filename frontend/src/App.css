@@ -1064,7 +1064,7 @@ button:disabled {
 .excel-table {
   width: 100%;
   border-collapse: collapse;
-  border:0px solid #333; /* Outer table border */
+  border: 0px solid #333; /* Outer table border */
 }
 
 .excel-table th,
@@ -1097,6 +1097,13 @@ button:disabled {
 
 .excel-table tbody tr:hover {
   background-color: rgba(52, 152, 219, 0.1); /* Hover effect */
+}
+
+/* Highlight for assigned sessions */
+.session-assigned {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
 }
 
 /* Timetable metadata styles */

@@ -3,9 +3,8 @@
 	public class TeachersScheduling
 	{
 		public string? TeacherName { get; set; }
-		public string? HourlyLoad { get; set; }
+		public double? HourlyLoad { get; set; }
 		public string? Grade { get; set; }
-		public string? Type { get; set; }
 		public List<SessionGroup>? Sessions { get; set; }
 	}
 
