@@ -7,7 +7,7 @@ import TimetablePreview from "./components/TimetablePreview";
 import ScheduleResults from "./components/ScheduleResults";
 import React from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import axios from "axios"; // Added axios import
+import axios from "axios";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("teachers");
@@ -15,8 +15,9 @@ function App() {
   const [examsUploaded, setExamsUploaded] = useState(false);
   const [scheduleGenerated, setScheduleGenerated] = useState(false);
   const [generatingSchedule, setGeneratingSchedule] = useState(false);
-  const [showAssignments, setShowAssignments] = useState(false);
-  const [sessionsDayDate, setSessionsDayDate] = useState(null); // New state for sessionsDayDate
+  const [sessionsDayDate, setSessionsDayDate] = useState(null);
+  const [scheduleData, setScheduleData] = useState([]);
+  const [scheduleError, setScheduleError] = useState(null);
 
   const LoadingAnimation = () => (
     <div className="loading-animation">
@@ -38,14 +39,11 @@ function App() {
   const handleExamUploadSuccess = async (data) => {
     console.log("Exam file uploaded successfully:", data);
     setExamsUploaded(true);
-
-    // Call GET /sessionsDayDate
     try {
       const response = await axios.get("http://localhost:5271/sessionsDayDate");
       setSessionsDayDate(response.data);
     } catch (error) {
       console.error("Error fetching sessionsDayDate:", error);
-      // Optionally handle error (e.g., show notification)
     }
   };
 
@@ -53,19 +51,26 @@ function App() {
     console.error("Upload error:", error);
   };
 
-  const handleGenerateSchedule = () => {
+  const handleGenerateSchedule = async () => {
     console.log("Generating schedule...");
     setGeneratingSchedule(true);
-    setTimeout(() => {
-      setGeneratingSchedule(false);
+    setScheduleError(null);
+    setScheduleData([]);
+    try {
+      const response = await axios.get("http://localhost:5271/schedule");
+      console.log("Schedule data received:", response.data); // Add this
+      const data = Array.isArray(response.data) ? response.data : [];
+      if (data.length === 0) {
+        throw new Error("No teacher schedules returned.");
+      }
+      setScheduleData(data);
       setScheduleGenerated(true);
-      setShowAssignments(false);
-    }, 2000);
-  };
-
-  const handleViewAssignments = () => {
-    console.log("Viewing assignments...");
-    setShowAssignments(true);
+      setGeneratingSchedule(false);
+    } catch (error) {
+      setScheduleError(error.response?.data?.message || "Failed to generate schedule. Please try again.");
+      setGeneratingSchedule(false);
+      console.error("Schedule generation error:", error);
+    }
   };
 
   const handleExportSchedule = () => {
@@ -76,7 +81,8 @@ function App() {
   const handleRegenerateSchedule = () => {
     console.log("Regenerating schedule...");
     setScheduleGenerated(false);
-    setShowAssignments(false);
+    setScheduleError(null);
+    setScheduleData([]);
   };
 
   const switchPage = (page) => {
@@ -103,9 +109,7 @@ function App() {
             <div className="success-icon">✅</div>
             <div className="success-message">
               <h3>Teacher List Uploaded Successfully!</h3>
-              <p>
-                Below is the processed teacher data from your uploaded file.
-              </p>
+              <p>Below is the processed teacher data from your uploaded file.</p>
             </div>
             <button
               className="upload-new-button"
@@ -163,42 +167,30 @@ function App() {
         <div className="upload-status-section">
           <div className="upload-status-card">
             <div
-              className={`status-indicator ${
-                teachersUploaded ? "status-complete" : "status-pending"
-              }`}
+              className={`status-indicator ${teachersUploaded ? "status-complete" : "status-pending"}`}
             >
               {teachersUploaded ? "✅" : "⏳"}
             </div>
             <div className="status-text">
               <h3>Teacher List</h3>
-              <p>
-                {teachersUploaded
-                  ? "Uploaded successfully"
-                  : "Not uploaded yet"}
-              </p>
+              <p>{teachersUploaded ? "Uploaded successfully" : "Not uploaded yet"}</p>
             </div>
           </div>
 
           <div className="upload-status-card">
             <div
-              className={`status-indicator ${
-                examsUploaded ? "status-complete" : "status-pending"
-              }`}
+              className={`status-indicator ${examsUploaded ? "status-complete" : "status-pending"}`}
             >
               {examsUploaded ? "✅" : "⏳"}
             </div>
             <div className="status-text">
               <h3>Exam Schedule</h3>
-              <p>
-                {examsUploaded ? "Uploaded successfully" : "Not uploaded yet"}
-              </p>
+              <p>{examsUploaded ? "Uploaded successfully" : "Not uploaded yet"}</p>
             </div>
           </div>
         </div>
 
-        {sessionsDayDate && (
-          <TimetablePreview sessionsDayDate={sessionsDayDate} />
-        )}
+        {sessionsDayDate && <TimetablePreview sessionsDayDate={sessionsDayDate} />}
 
         {!scheduleGenerated ? (
           <div className="generate-section">
@@ -212,9 +204,7 @@ function App() {
             ) : (
               <button
                 className="action-button generate-button"
-                disabled={
-                  !teachersUploaded || !examsUploaded || generatingSchedule
-                }
+                disabled={!teachersUploaded || !examsUploaded || generatingSchedule}
                 onClick={handleGenerateSchedule}
               >
                 Generate Schedule
@@ -222,90 +212,12 @@ function App() {
             )}
           </div>
         ) : (
-          <>
-            {!showAssignments ? (
-              <ScheduleResults
-                onViewAssignments={handleViewAssignments}
-                onExportSchedule={handleExportSchedule}
-                onRegenerateSchedule={handleRegenerateSchedule}
-              />
-            ) : (
-              <div className="timetables-list">
-                <div className="timetable-card">
-                  <div className="timetable-card-header">
-                    <h3>Surveillance Timetables </h3>
-                    <span className="assignment-count">0 Assignments</span>
-                  </div>
-
-                  {/* <div className="timetable-content">
-                    <table className="assignments-table">
-                      <thead>
-                        <tr>
-                          <th>Teacher</th>
-                          <th>Exam</th>
-                          <th>Date</th>
-                          <th>Time</th>
-                          <th>Room</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Ahmed Ben Salem</td>
-                          <td>Advanced Databases</td>
-                          <td>June 15, 2023</td>
-                          <td>09:00 - 11:00</td>
-                          <td>Room A101</td>
-                        </tr>
-                        <tr>
-                          <td>Leila Mansour</td>
-                          <td>Software Engineering</td>
-                          <td>June 15, 2023</td>
-                          <td>14:00 - 16:00</td>
-                          <td>Room B201</td>
-                        </tr>
-                        <tr>
-                          <td>Mohamed Ali</td>
-                          <td>Data Structures</td>
-                          <td>June 16, 2023</td>
-                          <td>09:00 - 11:00</td>
-                          <td>Room C302</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div> */}
-
-                  <div className="timetable-actions">
-                    <button
-                      className="action-button print-button"
-                      onClick={() => window.print()}
-                    >
-                      Print
-                    </button>
-                    <button
-                      className="action-button export-button"
-                      onClick={handleExportSchedule}
-                    >
-                      Export
-                    </button>
-                    <button
-                      className="action-button regenerate-button"
-                      onClick={handleRegenerateSchedule}
-                    >
-                      Regenerate
-                    </button>
-                  </div>
-                </div>
-
-                <button
-                  className="action-button generate-button"
-                  onClick={() => setShowAssignments(false)}
-                  style={{ marginTop: "1rem" }}
-                >
-                  Back to Summary
-                </button>
-              </div>
-            )}
-          </>
+          <ScheduleResults
+            scheduleData={scheduleData}
+            onExportSchedule={handleExportSchedule}
+            onRegenerateSchedule={handleRegenerateSchedule}
+            generationError={scheduleError}
+          />
         )}
       </div>
     </div>
@@ -322,9 +234,7 @@ function App() {
         </div>
         <nav className="sidebar-menu">
           <button
-            className={`menu-item ${
-              currentPage === "teachers" ? "active" : ""
-            }`}
+            className={`menu-item ${currentPage === "teachers" ? "active" : ""}`}
             onClick={() => switchPage("teachers")}
           >
             <span className="menu-icon">👩‍🏫</span>
@@ -338,9 +248,7 @@ function App() {
             <span className="menu-text">Exam Schedule</span>
           </button>
           <button
-            className={`menu-item ${
-              currentPage === "timetable" ? "active" : ""
-            }`}
+            className={`menu-item ${currentPage === "timetable" ? "active" : ""}`}
             onClick={() => switchPage("timetable")}
           >
             <span className="menu-icon">📅</span>

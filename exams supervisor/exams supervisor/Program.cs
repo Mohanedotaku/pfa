@@ -19,7 +19,7 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Features.FormOptions>(optio
 });
 builder.Services.AddHttpClient("PythonService", client =>
 {
-	client.BaseAddress = new Uri("http://2243td09-8000.euw.devtunnels.ms"); // Replace with actual URL
+	client.BaseAddress = new Uri("http://127.0.0.1:8000"); // Replace with actual URL
 	client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
 
@@ -162,7 +162,7 @@ app.MapGet("/schedule", async (
 			Converters = { new JsonStringEnumConverter() },
 			PropertyNamingPolicy = JsonNamingPolicy.CamelCase // Optional: Ensure camelCase for Python compatibility
 		};
-		Console.WriteLine($"Payload: {JsonSerializer.Serialize(payload, jsonOptions)}");
+		//Console.WriteLine($"Payload: {JsonSerializer.Serialize(payload, jsonOptions)}");
 		var response = await client.PostAsJsonAsync("/schedule", payload, jsonOptions);
 
 		if (!response.IsSuccessStatusCode)

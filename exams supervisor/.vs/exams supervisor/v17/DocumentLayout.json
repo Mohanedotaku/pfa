@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\businesslogic\\sessiondataprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\businesslogic\\sessiondataprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\model\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\model\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\model\\teachersscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\model\\teachersscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\model\\teacherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\model\\teacherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\model\\teachersscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\model\\teachersscheduling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\model\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\model\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\businesslogic\\sessiondataprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|solutionrelative:exams supervisor\\businesslogic\\sessiondataprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE6B3F62-E803-49F4-A0EE-669CA1F8A8F4}|exams supervisor\\exams supervisor.csproj|c:\\users\\fathi\\source\\repos\\exams supervisor application\\exams supervisor\\exams supervisor\\businesslogic\\test.cs||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "SessionDataProcessor.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\BusinessLogic\\SessionDataProcessor.cs",
               "RelativeDocumentMoniker": "exams supervisor\\BusinessLogic\\SessionDataProcessor.cs",
@@ -69,7 +69,7 @@
               "RelativeDocumentMoniker": "exams supervisor\\Program.cs",
               "ToolTip": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Program.cs",
               "RelativeToolTip": "exams supervisor\\Program.cs",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAAAJoAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAAAKQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-02T00:18:55.267Z",
               "EditorCaption": ""
@@ -84,7 +84,8 @@
               "RelativeToolTip": "exams supervisor\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-04T07:44:48.343Z"
+              "WhenOpened": "2025-05-04T07:44:48.343Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -101,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "TeachersScheduling.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\TeachersScheduling.cs",
               "RelativeDocumentMoniker": "exams supervisor\\Model\\TeachersScheduling.cs",
@@ -114,20 +115,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "TeacherInfo.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\TeacherInfo.cs",
               "RelativeDocumentMoniker": "exams supervisor\\Model\\TeacherInfo.cs",
               "ToolTip": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\TeacherInfo.cs",
               "RelativeToolTip": "exams supervisor\\Model\\TeacherInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-04T05:54:38.299Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Session.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\source\\repos\\Exams Supervisor application\\exams supervisor\\exams supervisor\\Model\\Session.cs",
               "RelativeDocumentMoniker": "exams supervisor\\Model\\Session.cs",

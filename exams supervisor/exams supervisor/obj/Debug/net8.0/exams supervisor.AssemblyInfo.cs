@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("exams supervisor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9bed32fb30016fab786fd17f3b3606134a6fdaf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+034f54181f9e4b970e1ad69d43352cfa2e062413")]
 [assembly: System.Reflection.AssemblyProductAttribute("exams supervisor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("exams supervisor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
